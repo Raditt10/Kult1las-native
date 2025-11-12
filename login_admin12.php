@@ -6,7 +6,6 @@ $error_msg = '';
 $koneksi = mysqli_connect("localhost", "root", "", "db_eskul");
 $success_msg = $_SESSION['success_msg'] ?? null;
 
-// Ambil dari cookie untuk prefill form
 $saved_user = isset($_COOKIE['admin_username']) ? $_COOKIE['admin_username'] : '';
 $saved_pass = isset($_COOKIE['admin_password']) ? $_COOKIE['admin_password'] : '';
 
