@@ -1,0 +1,430 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <title>Tentang Kami - Ekstrakurikuler SMKN 13 Bandung</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        
+       body {
+            font-family: 'Poppins', sans-serif;
+            color: #222;
+            background: linear-gradient(135deg, #e0f7fa 0%, #f8f9fa 100%);
+            min-height: 100vh;
+            position: relative;
+            animation: fadeIn 0.8s;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        body::before {
+            content: "";
+            position: fixed;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background-image: url('smkn13.jpg');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            filter: blur(12px) brightness(0.7);
+            z-index: -2;
+        }
+        body::after {
+            content: "";
+            position: fixed;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background: linear-gradient(135deg, rgba(44,202,107,0.12) 0%, rgba(0,50,0,0.18) 100%);
+            z-index: -1;
+        }
+        
+        .container {
+            max-width: 700px;
+            margin: 60px auto 0 auto;
+            background: rgba(255,255,255,0.97);
+            border-radius: 18px;
+            box-shadow: 0 4px 16px rgba(44,202,107,0.08);
+            padding: 38px 32px 32px 32px;
+            position: relative;
+        }
+        h1 {
+            text-align: center;
+            font-size: 2.1em;
+            background: linear-gradient(90deg, #388e3c 60%, #2ecc71 100%);
+            color: #fff;
+            padding: 18px 0 14px 0;
+            border-radius: 14px;
+            margin-bottom: 28px;
+            box-shadow: 0 4px 16px rgba(44,202,107,0.13);
+            letter-spacing: 1px;
+        }
+        .desc {
+            font-size: 1.13em;
+            color: #222;
+            margin-bottom: 22px;
+            line-height: 1.8;
+        }
+        .team {
+            margin-top: 28px;
+        }
+        .team-title {
+            font-size: 1.15em;
+            color: #43e97b;
+            font-weight: 600;
+            margin-bottom: 12px;
+        }
+        .team-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 18px;
+        }
+        .team-member {
+            background: #e0f7fa;
+            border-radius: 10px;
+            padding: 16px 18px;
+            flex: 1 1 220px;
+            min-width: 180px;
+            box-shadow: 0 2px 8px rgba(44,202,107,0.07);
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+        .team-member i {
+            font-size: 1.7em;
+            color: #43e97b;
+        }
+        .team-member .info {
+            display: flex;
+            flex-direction: column;
+        }
+        .team-member .name {
+            font-weight: 600;
+            color: #388e3c;
+        }
+        .team-member .role {
+            font-size: 0.98em;
+            color: #222;
+        }
+        .back-link {
+            text-align: center;
+            margin-top: 28px;
+        }
+        .back-link a {
+            color: #43e97b;
+            font-weight: 600;
+            text-decoration: none;
+            transition: color 0.2s;
+        }
+        .back-link a:hover {
+            color: #388e3c;
+            text-decoration: underline;
+        }
+         .sidebar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            height: 100vh;
+            width: 18%;
+            background: linear-gradient(135deg, #43e97b 0%, #38f9d7 100%);
+            box-shadow: 2px 0 16px rgba(44,202,107,0.10);
+            z-index: 1001;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            padding-top: 32px;
+            transform: translateX(-100%);
+            transition: transform 0.3s cubic-bezier(.4,2,.6,1);
+            border-top-right-radius: 56px;
+            border-bottom-right-radius: 56px;
+        }
+        .sidebar.open {
+            transform: translateX(0);
+        }
+        .sidebar .sidebar-logo {
+            font-size: 2em;
+            color: #fff;
+            margin-left: 24px;
+            margin-bottom: 32px;
+            font-weight: bold;
+            letter-spacing: 2px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .sidebar .sidebar-nav {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            gap: 18px;
+        }
+        .sidebar .sidebar-nav a {
+            color: #fff;
+            text-decoration: none;
+            font-size: 1.08em;
+            font-weight: 600;
+            padding: 12px 32px 12px 24px;
+            border-radius: 0 24px 24px 0;
+            transition: background 0.2s, color 0.2s;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .sidebar .sidebar-nav a:hover {
+            background: rgba(255,255,255,0.13);
+            width: calc(100% - 20px);
+            color: #222;
+        }
+        .burger {
+            position: fixed;
+            top: 24px;
+            left: 24px;
+            z-index: 1100;
+            width: 44px;
+            height: 44px;
+            background: rgba(67,233,123,0.18);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            box-shadow: 0 2px 8px rgba(44,202,107,0.10);
+            transition: background 0.2s, left 0.3s cubic-bezier(.4,2,.6,1), width 0.2s, height 0.2s, top 0.2s;
+        }
+        .burger i {
+            color: #fff;
+            font-size: 1.6em;
+        }
+        .burger.move {
+            left: 10px;
+            background: rgba(67,233,123,0.18);
+        }
+        @media (max-width: 700px) {
+            .sidebar {
+                width: 70vw;
+                min-width: 180px;
+                border-top-right-radius: 32px;
+                border-bottom-right-radius: 32px;
+            }
+            .burger {
+                width: 36px;
+                height: 36px;
+                left: 8px;
+                top: 8px;
+            }
+            .burger.move {
+                left: 2px;
+                top: 2px;
+            }
+        }
+        
+        footer {
+            margin-top: 40px;
+            text-align: center;
+            font-size: 0.98em;
+            color: #777;
+            z-index: 1;
+            animation: fadeIn 1s;
+        }
+
+        .footer-container {
+            max-width: 900px;
+            margin: 38px auto 18px auto;
+            background: linear-gradient(90deg, #e0f7fa 0%, #f8f9fa 100%);
+            border-radius: 28px;
+            box-shadow: 0 12px 48px rgba(44,202,107,0.18);
+            padding: 38px 0 22px 0;
+            color: #388e3c;
+            text-align: center;
+            font-size: 1.08em;
+            letter-spacing: 1px;
+            animation: fadeIn 1s;
+            position: relative;
+            overflow: hidden;
+        }
+        .footer-container::before {
+            content: "";
+            position: absolute;
+            left: -80px; top: -80px;
+            width: 180px; height: 180px;
+            background: radial-gradient(circle, #43e97b55 0%, transparent 80%);
+            z-index: 0;
+        }
+        .footer-container::after {
+            content: "";
+            position: absolute;
+            right: -60px; bottom: -60px;
+            width: 140px; height: 140px;
+            background: radial-gradient(circle, #38f9d755 0%, transparent 80%);
+            z-index: 0;
+        }
+        .footer-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            gap: 32px;
+            flex-wrap: wrap;
+            padding: 0 32px;
+            position: relative;
+            z-index: 1;
+        }
+        .footer-col {
+            flex: 1 1 220px;
+            min-width: 180px;
+            text-align: left;
+        }
+        .footer-col h4 {
+            margin-bottom: 12px;
+            font-size: 1.13em;
+            color: #43e97b;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .footer-col p {
+            margin: 0 0 8px 0;
+            color: #388e3c;
+            font-size: 1em;
+        }
+        .footer-social {
+            display: flex;
+            gap: 14px;
+            margin-top: 4px;
+        }
+        .footer-social a {
+            color: #222;
+            background: #fff;
+            border-radius: 50%;
+            padding: 8px;
+            box-shadow: 0 2px 8px rgba(44,202,107,0.10);
+            transition: color 0.2s, background 0.2s, transform 0.2s, box-shadow 0.2s;
+        }
+        .footer-social a:hover {
+            color: #222;
+            background: #e0f7fa;
+            transform: scale(1.15) translateY(-2px);
+            box-shadow: 0 4px 16px #43e97b44;
+        }
+        .footer-col h4:hover,
+        .footer-col p:hover,
+        .footer-copyright:hover {
+            color: #222 !important;
+        }
+        .footer-copyright {
+            margin: 0;
+            color: #388e3c;
+            font-size: 1em;
+            opacity: 0.7;
+            position: relative;
+            z-index: 1;
+        }
+        .footer-container hr {
+            border: none;
+            border-top: 2px solid #43e97b;
+            width: 90%;
+            margin: 0 auto 18px auto;
+            opacity: 0.2;
+            position: relative;
+            z-index: 1;
+        }
+        @media (max-width: 700px) {
+            .footer-row {
+                flex-direction: column;
+                gap: 18px;
+                padding: 0 12px;
+            }
+            .footer-container {
+                padding: 18px 0 12px 0;
+            }
+        }
+    </style>
+</head>
+<body>
+
+ <div class="burger" onclick="toggleSidebar()">
+        <i class="fa-solid fa-bars"></i>
+    </div>
+    <nav class="sidebar" id="sidebar">
+        <div class="sidebar-logo"><i class="fa-solid fa-school"></i> Ekskul 13</div>
+        <div class="sidebar-nav">
+            <a href="index.php"><i class="fa-solid fa-arrow-left"></i> Kembali</a>
+        </div>
+    </nav>
+
+    <div class="container">
+        <h1><i class="fa-solid fa-users"></i> Tentang Kami</h1>
+        <div class="desc">
+            Selamat datang di Sistem Ekstrakurikuler SMKN 13 Bandung.<br>
+            Website ini dibuat untuk memudahkan siswa dan admin dalam mengelola kegiatan ekstrakurikuler secara modern, responsif, dan mudah digunakan.<br>
+            Siswa dapat mendaftar ekskul, melihat jadwal, dan presensi secara online.<br>
+            Admin dapat mengelola data ekskul, pendaftaran, dan presensi dengan efisien.<br>
+            <br>
+            Kami berkomitmen untuk memberikan pengalaman terbaik dalam pengelolaan ekstrakurikuler di lingkungan sekolah.
+        </div>
+        <div class="team">
+            <div class="team-title"><i class="fa-solid fa-user-tie"></i> Tim Pengembang</div>
+            <div class="team-list">
+                <div class="team-member">
+                    <i class="fa-solid fa-user"></i>
+                    <div class="info">
+                        <span class="name">SMKN 13 BDG TEAM</span>
+                        <span class="role">ALL ROLE</span>
+                    </div>
+                </div>
+                <div class="team-member">
+                    <i class="fa-solid fa-user-graduate"></i>
+                    <div class="info">
+                        <span class="name">SMKN 13 Bandung</span>
+                        <span class="role">Support & Dokumentasi</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    
+     <footer>
+        <div class="footer-container">
+            <div class="footer-row">
+                <div class="footer-col">
+                    <h4><i class="fa-solid fa-leaf"></i> Tentang</h4>
+                    <p>Sistem Ekstrakurikuler SMKN 13 Bandung.<br>Modern, responsif, dan mudah digunakan untuk admin dan siswa.</p>
+                </div>
+                <div class="footer-col">
+                    <h4><i class="fa-solid fa-envelope"></i> Kontak</h4>
+                    <p><i class="fa-solid fa-envelope"></i> info@smkn13.sch.id</p>
+                    <p><i class="fa-solid fa-phone"></i> (022) 7318960</p>
+                </div>
+                <div class="footer-col">
+                    <h4><i class="fa-solid fa-share-nodes"></i> Social</h4>
+                    <div class="footer-social">
+                        <a href="https://www.instagram.com/smkn13bandung/" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+                        <a href="https://m.facebook.com/smkn13bdg2/" aria-label="Facebook"><i class="fa-brands fa-facebook"></i></a>
+                        <a href="https://x.com/smkn13bdg" aria-label="Twitter"><i class="fa-brands fa-twitter"></i></a>
+                    </div>
+                </div>
+            </div> 
+            <hr style="margin:18px 0;">
+            <p class="footer-copyright">&copy; <?php echo date('Y');?> SMKN 13 BDG. Hak Cipta Dilindungi.</p>
+        </div>
+    </footer>
+
+     <script>
+    function toggleSidebar() {
+        const sidebar = document.getElementById('sidebar');
+        const burger = document.querySelector('.burger');
+        sidebar.classList.toggle('open');
+        burger.classList.toggle('move', sidebar.classList.contains('open'));
+    }
+    // Optional: close sidebar when clicking outside
+    document.addEventListener('click', function(e) {
+        const sidebar = document.getElementById('sidebar');
+        const burger = document.querySelector('.burger');
+        if (sidebar.classList.contains('open') && !sidebar.contains(e.target) && !burger.contains(e.target)) {
+            sidebar.classList.remove('open');
+            burger.classList.remove('move');
+        }
+    });
+    </script>
+</body>
+</html>
