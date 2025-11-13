@@ -27,7 +27,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             $_SESSION['login_success'] = true; 
             $_SESSION['success_msg'] = "Anda berhasil login!";
 
-            // Simpan cookie username dan password asli (untuk prefill, bukan login)
            setcookie("admin_username", $username, time() + (2 * 60 * 60), "/");
            setcookie("admin_password", $password, time() + (2 * 60 * 60), "/");
            header("Location: panel_admin.php");

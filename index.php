@@ -24,7 +24,7 @@
             content: "";
             position: fixed;
             top: 0; left: 0; width: 100%; height: 100%;
-            background-image: url('smkn13.jpg');
+            background-image: url('assets/smkn13.jpg');
             background-size: cover;
             background-position: center;
             background-repeat: no-repeat;
