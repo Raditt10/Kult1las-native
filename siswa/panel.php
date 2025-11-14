@@ -459,15 +459,8 @@ $result_presensi = $conn->query($query_presensi);
     <div class="burger" onclick="toggleSidebar()">
         <i class="fa-solid fa-bars"></i>
     </div>
-    <nav class="sidebar" id="sidebar">
-        <div class="sidebar-logo"><i class="fa-solid fa-school"></i> Ekskul 13</div>
-        <div class="sidebar-nav">
-            <a href="logout_siswa.php" onclick="return confirm('Yakin ingin logout?')"><i class="fa-solid fa-right-from-bracket"></i> Logout</a>
-            <a href="daftar.php"><i class="fa-solid fa-list"></i> Daftar Ekskul</a>
-            <a href="presensi_siswa.php"><i class="fa-solid fa-calendar-check"></i> Presensi</a>
-            <a href="profile_siswa.php"><i class="fa-solid fa-id-card"></i> Profil Saya</a>
-        </div>
-    </nav>
+    
+    include 'sidebar.php';
 
       <?php if ($success_msg): ?>
 <div id="notif-success" class="notif-success show">

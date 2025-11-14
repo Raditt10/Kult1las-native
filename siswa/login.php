@@ -1,6 +1,6 @@
 <?php
 session_start();
-include 'koneksi.php';
+include ('../config/koneksi.php');
 
 $error_msg = '';
 $success_msg = $_SESSION['success_msg'] ?? null;
@@ -97,7 +97,7 @@ $saved_nama = isset($_COOKIE['nama_siswa']) ? $_COOKIE['nama_siswa'] : '';
             content: "";
             position: fixed;
             top: 0; left: 0; width: 100%; height: 100%;
-            background-image: url('smkn13.jpg');
+            background-image: url('../assets/smkn13.jpg');
             background-size: cover;
             background-position: center;
             background-repeat: no-repeat;
@@ -510,8 +510,8 @@ $saved_nama = isset($_COOKIE['nama_siswa']) ? $_COOKIE['nama_siswa'] : '';
     <nav class="sidebar" id="sidebar">
         <div class="sidebar-logo"><i class="fa-solid fa-school"></i> Ekskul 13</div>
         <div class="sidebar-nav">
-            <a href="index_siswa.php"><i class="fa-solid fa-arrow-left"></i> Kembali</a>
-            <a href="regis_siswa.php"><i class="fa-solid fa-user-plus"></i>Buat akun</a>
+            <a href="index.php"><i class="fa-solid fa-arrow-left"></i> Kembali</a>
+            <a href="registrasi.php"><i class="fa-solid fa-user-plus"></i>Buat akun</a>
         </div>
     </nav>
     <?php if ($error_msg): ?>

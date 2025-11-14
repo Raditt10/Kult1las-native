@@ -1,5 +1,5 @@
 <?php
-include 'koneksi.php';
+include('../config/koneksi.php');
 
 $query = "SELECT * FROM eskul";
 $result = $conn->query($query);
@@ -30,7 +30,7 @@ $result = $conn->query($query);
             content: "";
             position: fixed;
             top: 0; left: 0; width: 100%; height: 100%;
-            background-image: url('smkn13.jpg');
+            background-image: url('../assets/smkn13.jpg');
             background-size: cover;
             background-position: center;
             background-repeat: no-repeat;
@@ -353,7 +353,7 @@ $result = $conn->query($query);
         <div class="sidebar-logo"><i class="fa-solid fa-school"></i> Ekskul 13</div>
         <div class="sidebar-nav">
             <a href="index.php"><i class="fa-solid fa-arrow-left"></i> Kembali</a>
-            <a href="login_siswa.php"><i class="fa-solid fa-right-to-bracket"></i> Login</a>
+            <a href="login.php"><i class="fa-solid fa-right-to-bracket"></i> Login</a>
             <a href="regis_siswa.php"><i class="fa-solid fa-user-plus"></i> Buat akun</a>
         </div>
     </nav>
