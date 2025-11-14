@@ -460,7 +460,7 @@ $result_presensi = $conn->query($query_presensi);
         <i class="fa-solid fa-bars"></i>
     </div>
     
-    include 'sidebar.php';
+    include 'components/sidebar.php';
 
       <?php if ($success_msg): ?>
 <div id="notif-success" class="notif-success show">
