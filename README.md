@@ -101,7 +101,7 @@ Kult1las-native/
 
 🧑‍💻 Kontributor
 
-    Rafaditya Syahputra — Fullstack Developer
+    Rafaditya Syahputra - Front-end Developer
     GitHub Profile
 
 📄 Lisensi
